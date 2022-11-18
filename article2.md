@@ -23,34 +23,34 @@
 
 - $N_t$个发射天线，$N_r$个接收天线，码字传输期间信道系数恒定准静态。
   $$
-  \bold{Y = HX + Z}
+  \bold{Y = HX + Z} \tag{1}
   $$
   其中$\bold{Z} \in \mathcal{C}^{N_r + 1},\bold{H} \in \mathcal{C}^{N_r \times N_t},\bold{X} \in \mathcal{C}^{N_r + 1}$，$\bold{H}$中每个元素$i.i.d$服从$\mathcal{CN}(0,1)$
 
 - 假定接收机已知信道系数，在发射机处没有可用的信道状态信息，$K$个信息$nats$，码长为$L$，速率为
   $$
-  R = \frac{K}{L} (npcu)
+  R = \frac{K}{L} (npcu) \tag{2}
   $$
   使用正态近似具有各向同性分布码本的系统，解码错误概率$Pr(error)$，错误概率近似为
   $$
-  Pr(error) = E\Bigg[Q\bigg(\frac{\sqrt{L}(C(\bold{H}) - R)}{\sqrt{V(\bold{H})}} \bigg) \Bigg]
+  Pr(error) = E\Bigg[Q\bigg(\frac{\sqrt{L}(C(\bold{H}) - R)}{\sqrt{V(\bold{H})}} \bigg) \Bigg] \tag{3}
   $$
 
   $$
-  C(\bold{H}) = \log \bigg|\bold{I}_{N_r} + \frac{P}{N_t}\bold{HH}^h \bigg|
+  C(\bold{H}) = \log \bigg|\bold{I}_{N_r} + \frac{P}{N_t}\bold{HH}^h \bigg| \tag{4}
   $$
 
   $$
-  V(\bold{H}) = \min(N_t,N_r) - \sum_{j = 1}^{\min(N_t,N_r)}\frac{1}{(1 + \frac{P}{N}\mathcal{\bar\omega}_j)^2}
+  V(\bold{H}) = \min(N_t,N_r) - \sum_{j = 1}^{\min(N_t,N_r)}\frac{1}{(1 + \frac{P}{N}\mathcal{\bar\omega}_j)^2} \tag{5}
   $$
 
   其中$P(in~dB, 10\log_{10}P)$是总传输功率，因为方差为$1$也代表信噪比。$\bold{I}_{N_r}$代表$N_r \times N_r$的单位矩阵。$\{\mathcal{\bar\omega}_j\},j=1,\cdots,\min(N_t,N_r)$代表$\min(N_t,N_r)$个$\bold{HH}^h$的最大特征值，$(\cdot)^h$是厄米算符。给定的数据速率$R$，系统吞吐量为
   $$
-  \eta = R(1 - Pr(error))
+  \eta = R(1 - Pr(error)) \tag{6}
   $$
-  由(19-22)可知，吞吐量和错误概率是$Pr(error)$的单调函数，最小所需天线数为
+  由(3-6)可知，吞吐量和错误概率是$Pr(error)$的单调函数，最小所需天线数为
   $$
-  \{\hat{N_t}, \hat{N_r} \} = \underset{N_t,N_r}{\arg\min}\{Pr(error) \leq \theta\}
+  \{\hat{N_t}, \hat{N_r} \} = \underset{N_t,N_r}{\arg\min}\{Pr(error) \leq \theta\} \tag{7}
   $$
   其中$\theta$表示错误概率约束，因此$\eta \geq R(1 - \theta)$
 
@@ -60,7 +60,7 @@
   - Case2：$N_r$给定，$N_t$很大
   - Case3：$N_r,N_t$很大，$SNR$很小，$c = \frac{N_t}{N_r}$是个常量
 
-- 定理1：由，式(20)收敛于一个等价的高斯随机变量$\mathcal{Y} \sim \mathcal{N}(\mu,\sigma^2)$，其中![image4](article2.assets\image4.png)
+- 定理1：由，式(4)收敛于一个等价的高斯随机变量$\mathcal{Y} \sim \mathcal{N}(\mu,\sigma^2)$，其中![image4](article2.assets\image4.png)
 
   作为二阶近似，这里使用
   $$
@@ -74,21 +74,21 @@
   
   N_r,& \quad Case2 \quad or \quad Case3 \quad with \quad c \geq 1
   
-  \end{cases}
+  \end{cases}\tag{8}
   $$
 
 
   因此错误概率$Pr(error)$可以近似为
 $$
-  \begin{aligned}
+\begin{aligned}
   Pr(error) &\simeq \int_0^\infty f_{\mathcal{Y}}(y)Q\Bigg(\frac{\sqrt{L}(y - R)}{\sqrt{\min(N_t,N_r)}} \Bigg)dy \\
   & \simeq \int_0^{R - \phi}f_{\mathcal{Y}}(y)dy + \int_{R - \phi}^{R + \phi}f_{\mathcal{Y}}(y)\Big(\frac{1}{2} + \frac{R}{2\phi} - \frac{1}{2\phi} \Big)dy \\
   &=\mathcal{U}(R,L,N_t,N_r,P)
-  \end{aligned}
+  \end{aligned} \tag{9}
 $$
 
 $$
-  \begin{aligned}
+\begin{aligned}
   
   \mathcal{U}(R,L,N_t,N_r,P) = 
   &1 - \mathcal{Q}(-\phi)+\Bigg(\frac{1}{2} + \frac{R}{2\phi} \Bigg)\Big(\mathcal{Q}(-\phi) - \mathcal{Q}(\phi)\Big) \\
@@ -97,17 +97,17 @@ $$
   
   &-\frac{\mu}{2}\Big(1 - 2\mathcal{Q}(-\phi)\Big) +\frac{\sigma}{\sqrt{2\pi}}\exp{\Big(-\frac{\mathcal{Q}^2(-\phi)}{2\sigma^2}\Big)}\Bigg)
   
-  \end{aligned}
+  \end{aligned} \tag{10}
 $$
 
-  其中$\mathcal{Q}(\phi) = Q(\frac{R + \phi - \mu}{\sigma})$，$\phi = \frac{\sqrt{\pi\min(N_t,N_r)}}{2L}$，式(25)根据下式化简
+  其中$\mathcal{Q}(\phi) = Q(\frac{R + \phi - \mu}{\sigma})$，$\phi = \frac{\sqrt{\pi\min(N_t,N_r)}}{2L}$，式(9)根据下式化简
 $$
-  F_{\mathcal{Y}}(y) = 1 - Q(\frac{y - \mu}{\sigma}) \\
-  Q\Bigg(\frac{\sqrt{L}(y - R)}{\sqrt{\min(N_t,N_r)}} \Bigg) \simeq \mathcal{V}(y)\\
+F_{\mathcal{Y}}(y) = 1 - Q(\frac{y - \mu}{\sigma}) \\
+  Q\Bigg(\frac{\sqrt{L}(y - R)}{\sqrt{\min(N_t,N_r)}} \Bigg) \simeq \mathcal{V}(y)\\ \tag{11}
 $$
   ![image5](article2.assets\image5.png)
 
-- 当$N_r,N_t$逐渐增大时，由(19)、(24)和(24)上面的等式可得
+- 当$N_r,N_t$逐渐增大时，由(3)、(8)和(8)上面的等式可得
 
   ![image6](article2.assets\image6.png)
 
