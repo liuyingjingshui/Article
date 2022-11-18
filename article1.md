@@ -58,6 +58,10 @@
   \nu_m = Q\Bigg(\frac{\sum_{i=1}^m\log_2(1 + SNR z_i) + \frac{\log(ml)}{l} - R}{\log_2e \sqrt{\sum_{i=1}^m\frac{(SNR z_i + 2)SNR z_i}{l(SNR z_i + 1)^2}}} \Bigg)
   $$
   传输周期的持续时间$T$，接收方在$t$次尝试中解码数据包的概率为
+  
+  
+  
+  
   $$
   Pr\{T \leq t \} = 1 - \mathbb{E}_z\{\nu_t \}
   $$
@@ -65,7 +69,7 @@
   $$
   \epsilon = \mathbb{E}_z\{\nu_M \}
   $$
-
+  
   由公式(6)
   $$
   r_{th} = (1 - \epsilon)C_E/l
@@ -74,10 +78,10 @@
   $$
   C_E = -\frac{1}{\theta} \ln(\max\{|\lambda_1|,\cdots,|\lambda_M| \})
   $$
-  其中$\overrightarrow{\lambda}$矩阵是矩阵$A$的特征，
-
+  其中$\overrightarrow{\lambda}$矩阵是矩阵$A$的特征
+  
   <img src="article1.assets/image1.png" alt="image1" style="zoom:80%;" />
-
+  
 - ON-OFF离散马尔可夫：定义两个状态 $state_1 = \lbrace OFF:source-keep-silent \rbrace$，$state_2=\lbrace ON:arrival-rate,a_i = lr(bits/block) \rbrace$ ，其中$r$为到达恒定速率，转移概率矩阵为
   $$
   G = 
