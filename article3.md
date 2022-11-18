@@ -57,21 +57,17 @@
   
   - 设计了一个类似的优化问题来研究$I$型-$HARQ,CC-HARQ$和$IR-HARQ$进程之间的性能差距
     $$
-    \min_{P_m} &\Phi_M \\
-    
-    subject\quad to\quad &\bar{\xi} = 
-    
-    J\\
-    
-    &P_\min \leq P_m \leq P_\max
+    \min_{P_m}\Phi _M\\
+    subject\quad to\quad \bar{\xi}=J\\
+    P_{\min}\leq P_m\leq P_{\max}\\
     $$
-    在间隔$[P_\min，P_\max]$中强制发送功率$P_m$，这是真实设备的常见约束。这样得到了平均消耗能量$\bar{\xi}$上下界
+    在间隔$\left[ P_{\min}，P_{\max} \right]$中强制发送功率$P_m$，这是真实设备的常见约束。这样得到了平均消耗能量$\bar{\xi}$上下界
     $$
     \bar{\xi} = L \cdot \sum_{m=1}^M P_m \cdot \Phi_{m-1}
     \geq L \cdot \sum_{m=1}^M P_\min \cdot \Phi_{m-1}
     \geq L \cdot P_\min \triangleq J_\min
     $$
-  
+    
     $$
     \bar{\xi} = L \cdot \sum_{m=1}^M P_m \cdot \Phi_{m-1}
     \leq L \cdot \sum_{m=1}^M P_\max \cdot \Phi_{m-1} 
@@ -185,4 +181,3 @@
   <img src="article3.assets/image10.png" alt="image10" style="zoom:50%;" />
   
   结论：$IR-HARQ$在节能方面总是优于$CC-HARQ$。
-  
