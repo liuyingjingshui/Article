@@ -73,6 +73,9 @@
     \bar{\xi}=L\cdot \sum_{m=1}^M{P}_m\cdot \Phi _{m-1}\geq L\cdot \sum_{m=1}^M{P}_{\min}\cdot \Phi _{m-1}\geq L\cdot P_{\min}\triangleq J_{\min} \tag{9}
     $$
     
+    
+    
+    
     $$
     \bar{\xi}=L\cdot \sum_{m=1}^M{P}_m\cdot \Phi _{m-1}\leq L\cdot \sum_{m=1}^M{P}_{\max}\cdot \Phi _{m-1}\leq L\cdot P_{\max}\cdot M\triangleq J_{\max} \tag{10}
     $$
