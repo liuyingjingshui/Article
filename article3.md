@@ -57,9 +57,13 @@
   
   - 设计了一个类似的优化问题来研究$I$型-$HARQ,CC-HARQ$和$IR-HARQ$进程之间的性能差距
     $$
+    \begin{aligned}
     \min_{P_m}\Phi _M\\
+    
     subject\quad to\quad \bar{\xi}=J\\
+    
     P_{\min}\leq P_m\leq P_{\max}\\
+    \end{aligned}
     $$
     在间隔$\left[ P_{\min}，P_{\max} \right]$中强制发送功率$P_m$，这是真实设备的常见约束。这样得到了平均消耗能量$\bar{\xi}$上下界
     $$
