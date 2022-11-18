@@ -76,7 +76,7 @@
   $$
   其中$\overrightarrow{\lambda}$矩阵是矩阵$A$的特征，
 
-  <img src="article1.assets\image1.png" alt="image1" style="zoom: 67%;" />
+  <img src="article1.assets/image1.png" alt="image1" style="zoom:80%;" />
 
 - ON-OFF离散马尔可夫：定义两个状态 $state_1 = \lbrace OFF:source-keep-silent \rbrace$，$state_2=\lbrace ON:arrival-rate,a_i = lr(bits/block) \rbrace$ ，其中$r$为到达恒定速率，转移概率矩阵为
   $$
@@ -104,6 +104,6 @@
 
 ### 画图验证
 
-<img src="article1.assets\image2.png" alt="image-20221112121956977" style="zoom: 80%;" />
+<img src="article1.assets/image2.png" alt="image2" style="zoom:80%;" />
 
-<img src="article1.assets\image3.png" alt="image-20221112122040753" style="zoom:80%;" />
+<img src="article1.assets/image3.png" alt="image3" style="zoom:80%;" />
