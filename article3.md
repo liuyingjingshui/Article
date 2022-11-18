@@ -69,15 +69,14 @@
     $$
     
     在间隔$\left[ P_{\min}，P_{\max} \right]$中强制发送功率$P_m$，这是真实设备的常见约束。这样得到了平均消耗能量$\bar{\xi}$上下界
-    $$
-    \bar{\xi}=L\cdot \sum_{m=1}^M{P}_m\cdot \Phi _{m-1}\geq L\cdot \sum_{m=1}^M{P}_{\min}\cdot \Phi _{m-1}\geq L\cdot P_{\min}\triangleq J_{\min} \tag{9}
-    $$
-    
-    
     
     
     $$
-    \bar{\xi}=L\cdot \sum_{m=1}^M{P}_m\cdot \Phi _{m-1}\leq L\cdot \sum_{m=1}^M{P}_{\max}\cdot \Phi _{m-1}\leq L\cdot P_{\max}\cdot M\triangleq J_{\max} \tag{10}
+    \bar{\xi}=L\cdot \sum_{m=1}^M{P}_m\cdot \Phi _{m-1}\geq L\cdot \sum_{m=1}^M{P}_{\min}\cdot \Phi _{m-1}\geq L\cdot P_{\min}\triangleq J_{\min} \tag{9}\\
+    $$
+    
+    $$
+    \bar{\xi}=L\cdot \sum_{m=1}^M{P}_m\cdot \Phi _{m-1}\leq L\cdot \sum_{m=1}^M{P}_{\max}\cdot \Phi _{m-1}\leq L\cdot P_{\max}\cdot M\triangleq J_{\max} \tag{10}\\
     $$
   
   #### Type-I HARQ
