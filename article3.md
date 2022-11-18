@@ -70,30 +70,22 @@
     
     在间隔$\left[ P_{\min}，P_{\max} \right]$中强制发送功率$P_m$，这是真实设备的常见约束。这样得到了平均消耗能量$\bar{\xi}$上下界
     $$
-    \bar{\xi} = L \cdot \sum_{m=1}^M P_m \cdot \Phi_{m-1}
-    \geq L \cdot \sum_{m=1}^M P_\min \cdot \Phi_{m-1}
-    \geq L \cdot P_\min \triangleq J_\min \tag{9}
+    \bar{\xi}=L\cdot \sum_{m=1}^M{P}_m\cdot \Phi _{m-1}\geq L\cdot \sum_{m=1}^M{P}_{\min}\cdot \Phi _{m-1}\geq L\cdot P_{\min}\triangleq J_{\min} \tag{9}
     $$
     
     $$
-    \bar{\xi} = L \cdot \sum_{m=1}^M P_m \cdot \Phi_{m-1}
-    \leq L \cdot \sum_{m=1}^M P_\max \cdot \Phi_{m-1} 
-    \leq L \cdot P_\max \cdot M\triangleq J_\max \tag{10}
+    \bar{\xi}=L\cdot \sum_{m=1}^M{P}_m\cdot \Phi _{m-1}\leq L\cdot \sum_{m=1}^M{P}_{\max}\cdot \Phi _{m-1}\leq L\cdot P_{\max}\cdot M\triangleq J_{\max} \tag{10}
     $$
   
   #### Type-I HARQ
   
   - 接收端尝试只解码最后接收到的包，丢弃之前接收到的信息，得到
     $$
-    \Phi_m^{(TI)} = 
-    
+    \Phi _{m}^{\left( TI \right)}=
     \begin{cases}
-    
-    \prod_{j=1}^m \phi_j & m \neq 0 \\
-    
-    1 & m = 0
-    
-    \end{cases} \tag{11}
+    	\prod_{j=1}^m{\phi}_j&		m\ne 0\\
+    	1&		m=0\\
+    \end{cases}\tag{11}
     $$
     其中，$\phi_j$是在第$j$次传输尝试中数据未被解码的概率，$\phi_j = \mathbb{E}_g[\epsilon(L,R,gP_j)]$
   
@@ -169,19 +161,21 @@
   
   - 为了减少支持数据重传所需的缓冲量，成本和延迟敏感的机器类型设备来说是一个非常重要的限制，取$L \in \{50,200 \},M = 2$，如下图展示了中断概率$\Phi_M$和平均消耗能量$\bar \xi$的比较。
   
-    ![image7](article3.assets\image7.png)
+    ![image1](article3.assets\image1.png)
   
     可知$IR-HARQ$具有最佳性能，$\bar \xi$在对数尺度变化是$\ln (200/50)\approx 1.4$
   
   #### 功率分配
   
-  - 下图展示了$M$次传输尝试的功率分配与$L=50$时的平均消耗能量$\bar \xi$<img src="D:\Github\my_note\Article\article3.assets\image8.png" alt="image-20221117180443716"  />
+  - 下图展示了$M$次传输尝试的功率分配与$L=50$时的平均消耗能量$\bar \xi$
   
+    <img src="article3.assets/image3.png" alt="image3" style="zoom:50%;" />
+    
     对于两种$TypeII-HARQ$过程，当能量预算$\bar \xi$较低时，最好的做法是在第一次传输尝试时分配更多的功率，即$P_1 > P_2$。当可用能量较高时，特别是使用$CC$当$\ln \bar\xi > 5$和使用$IR$当$\ln \bar \xi > 5.3$时，更优的方案是在第二次传输尝试上分配更多的功率即$P_1 < P_2$。
   
   #### 交付延时
   
-  <img src="article3.assets\image9.png" alt="image-20221117182205950" style="zoom:50%;" />
+  <img src="article3.assets/image4.png" alt="image4" style="zoom:50%;" />
   
   #### 能效
   
